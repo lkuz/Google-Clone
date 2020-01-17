@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script>
+    document.querySelector("#textfeld").onclick = function () {
+      document.querySelector("#test").innerHTML = document.querySelector("#demo").value;
+    }
+  </script>
+
 
 <head>
   <meta charset="UTF-8" />
@@ -14,54 +20,62 @@
 <body>
 
   <div class="App">
-    <div class="nav">
-      <div>
-        <a class="nav-link" href="#" class="nav-link">Über Google</a class="nav">
-        <a class="nav-link" href="#" class="nav-link">Store</a class="nav">
-      </div>
-      <div>
-        <a class="nav-link" href="#" class="nav-link">Gmail</a>
-        <a class="nav-link" href="#" class="nav-link">Bilder</a class="nav">
-        <a class="nav-link" href="#" class="nav-link">Menü</a class="nav">
-        <a class="nav-link" href="#" class="nav-link">Profil</a class="nav">
-      </div>
-    </div>
-
-    <div class="logo-form-container">
-      <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo"
-        class="logo" />
-
-      <div class="searchfield-container">
-        <form type="submit">
-          <input class="search-field" type="text" />
-        </form>
+    <div class="content-wrapper">
+      <div class="nav">
+        <div class="nav-left-side">
+          <a class="nav-link" href="#" class="nav-link">Über Google</a class="nav">
+          <a class="nav-link" href="#" class="nav-link">Store</a class="nav">
+        </div>
+        <div class="nav-right-side">
+          <a class="nav-link" href="#" class="nav-link">Gmail</a>
+          <a class="nav-link" href="#" class="nav-link">Bilder</a class="nav">
+          <a class="nav-link" href="#" class="nav-link">Menü</a class="nav">
+          <a class="nav-link" href="#" class="nav-link">Profil</a class="nav">
+        </div>
       </div>
 
-      <div class="button-container">
-        <input value="Google-Suche" class="google-search">
-        <input value="Auf gut Glück!" class="google-search">
-      </div>
-    </div>
+      <div class="logo-form-container">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo"
+          class="logo" />
 
-    </div>
-
-    <div class="footer">
-      <div class="top"><div class="country">Deutschland</div></div>
-    
-      <div class="bottom">
-        <div class="left-items">
-          <a class="footer-link" href="#">Werbeprogramme</a>
-          <a class="footer-link" href="#">Unternehmen</a>
-          <a class="footer-link" href="#">Wie funktioniert die Google-Suche?</a>
+        <div class="searchfield-container">
+          <img src="./images/magnifying-glass.svg" alt="Suchen" class="magnifying-glass">
+          <form type="text">
+            <input class="search-field" id="demo" type="text" />
+          </form>
+          <img src="./images/studio.svg" alt="Sprachaufnahme" class="microphone">
         </div>
 
-        <div class="right-items">
-          <a class="footer-link" href="#">Datenschutzerklärung</a>
-          <a class="footer-link" href="#">Nutzungsbedingungen</a>
-          <a class="footer-link" href="#">Einstellungen</a>
+        <div class="button-container">
+          <button id="textfeld" type="button" class="google-search">Google-Suche</button>
+          <button id="glueck" type="button" class="google-search">Auf gut Glück!</button>
+
+          <div><p id="test"></p></div>
         </div>
       </div>
     </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="top">
+      <div class="country">Deutschland</div>
+    </div>
+
+    <div class="bottom">
+      <div class="left-items">
+        <a class="footer-link-left" href="#">Werbeprogramme</a>
+        <a class="footer-link-left" href="#">Unternehmen</a>
+        <a class="footer-link-left" href="#">Wie funktioniert die Google-Suche?</a>
+      </div>
+
+      <div class="right-items">
+        <a class="footer-link-right" href="#">Datenschutzerklärung</a>
+        <a class="footer-link-right" href="#">Nutzungsbedingungen</a>
+        <a class="footer-link-right" href="#">Einstellungen</a>
+      </div>
+    </div>
+  </div>
   </div>
 </body>
 
