@@ -9,7 +9,9 @@
     return
   } else {
     var searchValue = document.querySelector("#demo").value;
-    window.location = "http://www.google.com/search?q=" + searchValue;
+    var formatted = searchValue.split(" ").join("+");
+    console.log(formatted);
+    window.location = "http://www.google.com/search?q=" + formatted;
   }
 }
 </script>
