@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script>
-    document.querySelector("#textfeld").onclick = function () {
-      document.querySelector("#test").innerHTML = document.querySelector("#demo").value;
-    }
-  </script>
+
+
+<script>
+
+  function onClickGoogleSearch(){
+    if(document.querySelector("#demo").value == ""){
+    return
+  } else {
+    var searchValue = document.querySelector("#demo").value;
+    window.location = "http://www.google.com/search?q=" + searchValue;
+  }
+}
+</script>
 
 
 <head>
@@ -39,7 +47,7 @@
           class="logo" />
 
         <div class="searchfield-container">
-          <img src="./images/magnifying-glass.svg" alt="Suchen" class="magnifying-glass">
+          <img src="./images/magnifying-glass.svg" onclick=onClickGoogleSearch() alt="Suchen" class="magnifying-glass">
           <form type="text">
             <input class="search-field" id="demo" type="text" />
           </form>
@@ -47,10 +55,8 @@
         </div>
 
         <div class="button-container">
-          <button id="textfeld" type="button" class="google-search">Google-Suche</button>
+          <button id="textfeld" onclick=onClickGoogleSearch() type="button" class="google-search">Google-Suche</button>
           <button id="glueck" type="button" class="google-search">Auf gut Glück!</button>
-
-          <div><p id="test"></p></div>
         </div>
       </div>
     </div>
