@@ -4,16 +4,27 @@
 
 <script>
 
-  function onClickGoogleSearch(){
-    if(document.querySelector("#demo").value == ""){
-    return
-  } else {
-    var searchValue = document.querySelector("#demo").value;
-    var formatted = searchValue.split(" ").join("+");
-    console.log(formatted);
-    window.location = "http://www.google.com/search?q=" + formatted;
+  function onClickGoogleSearch(event){
+    const searchValue = document.querySelector("#demo").value
+    console.log(searchValue);
+    
+    
+    if(searchValue != ""){     
+      var formatted = searchValue.split(" ").join("+");
+      window.location = "http://www.google.com/search?q=" + formatted;
+    }
   }
-}
+
+  document.addEventListener(
+    'keydown',
+    (evt) => {
+      if (evt.key === 'Enter') {
+        evt.preventDefault();
+        onClickGoogleSearch();
+      }
+    }
+  );
+
 </script>
 
 
@@ -46,20 +57,21 @@
 
       <div class="logo-form-container">
         <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo"
-          class="logo" />
+        class="logo" />
+        
+        <form type="text">
+          <div class="searchfield-container">
+            <img src="./images/magnifying-glass.svg" onclick=onClickGoogleSearch() alt="Suchen" class="magnifying-glass">
+              <input class="search-field" id="demo" type="text" />
+            
+            <img src="./images/studio.svg" alt="Sprachaufnahme" class="microphone">
+          </div>
 
-        <div class="searchfield-container">
-          <img src="./images/magnifying-glass.svg" onclick=onClickGoogleSearch() alt="Suchen" class="magnifying-glass">
-          <form type="text">
-            <input class="search-field" id="demo" type="text" />
-          </form>
-          <img src="./images/studio.svg" alt="Sprachaufnahme" class="microphone">
-        </div>
-
-        <div class="button-container">
-          <button id="textfeld" onclick=onClickGoogleSearch() type="button" class="google-search">Google-Suche</button>
-          <button id="glueck" type="button" class="google-search">Auf gut Glück!</button>
-        </div>
+          <div class="button-container">
+            <button id="textfeld" type="button" onclick="onClickGoogleSearch()" onsubmit="onClickGoogleSearch();" class="google-search">Google-Suche</button>
+            <button id="glueck" type="button" class="google-search">Auf gut Glück!</button>
+          </div>
+      </form>
       </div>
     </div>
 
